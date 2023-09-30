@@ -2,7 +2,7 @@
 
 header('Access-Control-Allow-Origin: *');
 
-$connect = new PDO("mysql:host=localhost;dbname=id19500520_db", "id19500520_user", "Xitn^Gbvn3V9Kg<)");
+$connect = new PDO("mysql:host=localhost;dbname=id21333450_crudfatec", "id21333450_crudfatec", "*Fatec123");
 
 $received_data = json_decode(file_get_contents("php://input"));
 
@@ -11,7 +11,7 @@ $data = array();
 if($received_data->query != '')
 {
 	$query = "
-	SELECT * FROM fatec_alunos 
+	SELECT * FROM fatec_alunos4 
 	WHERE first_name LIKE '%".$received_data->query."%' 
 	OR last_name LIKE '%".$received_data->query."%' 
 	ORDER BY id DESC
@@ -20,7 +20,7 @@ if($received_data->query != '')
 else
 {
 	$query = "
-	SELECT * FROM fatec_alunos 
+	SELECT * FROM fatec_alunos4 
 	ORDER BY id DESC
 	";
 }
